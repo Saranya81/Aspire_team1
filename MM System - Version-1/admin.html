@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>MM_System</h2>
+            <ul>
+                <li><a href="#" onclick="showContent('home')">Home</a></li>
+                <li><a href="#" onclick="showContent('profile')">Members</a></li>
+                <li><a href="#" onclick="showContent('Mentor')">Mentor</a></li>
+                <li><a href="#" onclick="showContent('Mentee')">Mentee</a></li>
+                <li><a href="#" onclick="showContent('courses')">Courses</a></li>
+                <li><a href="#" onclick="showContent('feedback')">Feedback</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div id="home" class="content">
+                <h1>Welcome to the Mentor Mentee Administrative System</h1>
+                <div class="img-content">
+                    <div><img src="./ASSESTS/images.jpg" alt="Image 1"></div>
+                    <div><img src="./ASSESTS/TeacherVision.webp" alt="Image 2"></div>
+                    <div><img src="./ASSESTS/Teaching-as-a-profession-essay.jpg" alt="Image 3"></div>
+                    <div><img src="./ASSESTS/1280-chandler-mayfield.jpg" alt="Image 4"></div>
+                </div>
+                <p>
+                    Successful mentorships often evolve into friendships with both partners learning and providing support for each other. To guide students on both educational and personal aspects. Acquire hard skills and learn how to do something that was never done before. Develop soft skills and become emotionally intelligent. Both functions provide explicit and implicit lessons related to professional development as well as general work–life balance.
+                </p>
+                <h2>Never stop learning, because life never stops teaching.</h2>
+            </div>
+
+            <div id="profile" class="content hidden">
+                <h1>Members Information</h1>
+                <div class="navbar">
+                    <input class="form-control" id="search" type="text" placeholder="Search member by Name">
+                    <button class="btn" onclick="searchStudent()">Search</button>
+                    <button class="btn" onclick="addStudent()">Add Member</button>
+                </div>
+                <table class="table" id="students-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>E-mail</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                            <th>Feedback</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="main">
+                        <!-- Student rows will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="Mentor" class="content hidden">
+                <h1>Mentor</h1>
+                <p>Welcome to the mentor page</p>
+            </div>
+
+            <div id="Mentee" class="content hidden">
+                <h1>Mentee</h1>
+                <p>Mentee details will be uploaded soon...</p>
+            </div>
+
+            <div id="courses" class="content hidden">
+                <h1>Courses Details</h1>
+                <p>Courses details will be uploaded soon...</p>
+            </div>
+
+            <div id="feedback" class="content hidden">
+                <h1>Feedback</h1>
+                <p>Feedback details will be uploaded soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mentor Mentee System</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="role-select">
+                    <label>
+                        <input type="radio" name="role" value="admin" required> Admin
+                    </label>
+                    <label>
+                        <input type="radio" name="role" value="mentor" required> Mentor
+                    </label>
+                    <label>
+                        <input type="radio" name="role" value="mentee" required> Mentee
+                    </label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="register-link">Not registered? <a href="#">Create an account</a></p>
+            <p class="error-message" id="errorMessage"></p>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
