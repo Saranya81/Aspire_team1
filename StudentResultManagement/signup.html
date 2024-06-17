@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="addstudent.css"> 
+    <title>SignUp</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form name="SignupForm" onsubmit="return formvalidation()">
+        <p>
+            <label for="first">Name:</label>
+            <input type="text" id="first" name="first" title="give the proper Name. characters only allowed" required />
+            <span id="first-error" class="error-message"></span>
+        </p>
+        <p>
+            <label for="fname">Father Name:</label>
+            <input type="text" id="fname" name="fname" title="give the proper Name. characters only allowed" required />
+            <span id="fname-error" class="error-message"></span>
+        </p>
+        <p>
+            <label for="designation">Designation</label>
+            <select id="designation" name="designation">
+                <option value="None">None</option>
+                <option value="Admin">Admin</option>
+                <option value="Student">Student</option>
+            </select>
+            <span id="designation-error" class="error-message"></span>
+        </p>
+        <p>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="None">None</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+        </p>
+        <p>
+            <label for="dateofBirth">Date of Birth</label>
+            <input type="date" id="dateofBirth" name="dateofBirth">
+            <span id="dateofBirth-error" class="error-message"></span>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" title="give the proper email id" required />
+            <span id="email-error" class="error-message"></span>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" title="Password must contain at least one number, one alphabet, one symbol, and be at least 8 characters long" required />
+            <span id="password-error" class="error-message"></span>
+        </p>
+        <p>
+            <label for="mobile">Contact:</label>
+            <input type="text" id="mobile" name="mobile" maxlength="10" required />
+            <span id="mobile-error" class="error-message"></span>
+        </p>
+        <p>
+            <input type="submit" value="Submit" name="Submit" />
+        </p>
+    </form>
+    <script src="signup.js"></script>
+</body>
+</html>
