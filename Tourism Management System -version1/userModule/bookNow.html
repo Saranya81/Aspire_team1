@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+/*book now -form*/
+.Booknow {
+  font-family: 'Lexend', sans-serif;
+          font-size:16px;
+ 
+  width: 600px;
+  max-width: 900px; /* Adjust max-width as needed */
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  /* background-color: hsla(120, 2%, 11%, 0.1); */
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+   
+    /* margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem; */
+    backdrop-filter: blur(px);
+}
+
+.Booknow label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.Booknow input[type="text"],
+.Booknow input[type="number"],
+.Booknow input[type="date"],
+.Booknow select,
+.Booknow button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+
+/* Button styling */
+.Booknow button {
+  margin-top:5%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Booknow button:hover {
+  background-color: #0056b3;
+}
+
+/* Close icon styling */
+#close-Booknow {
+  display: block;
+  font-size: 24px;
+  color: #ccc;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#phone {
+  width: 100%; 
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+#close-Booknow:hover {
+  color: #999;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+.modal p{
+  color: #000000;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 30%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Override autofill styles */
+/* Override autofill styles */
+
+
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+  .Booknow {
+    max-width: 100%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <img src="images/booktrio.jpg" style="height: 500px;width: 100%;">
+    <form id="Booknow" class="Booknow">
+        <i class="ri-close-fill close-icon" id="close-Booknow"></i>
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="packageName">Package Name:</label>
+          <input type="text" id="packageName" name="packageName" required readonly>
+          <label for="days">Duration:</label>
+          <input type="text" id="days" name="days" required readonly>
+          <label for="peopleCount">Number of People:</label>
+          <input type="text" id="peopleCount" name="peopleCount" required readonly>
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price" required readonly>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+            <label for="accommodation">Accommodation:</label>
+            <select id="accommodation" name="accommodation">
+                <option value="resort">Resort</option>
+                <option value="guesthouse">Guesthouse</option>
+                <option value="not_required">Not Required</option> <!-- Modified value -->
+            </select>
+            <label for="travelFacilities">Travel Facilities:</label>
+            <select id="travelFacilities" name="travelFacilities">
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+                <option value="flight">Flight</option>
+                <option value="not_required">Not Required</option> <!-- Modified value -->
+            </select>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <!-- <input type="hidden" id="source" name="source" value="book_now"> -->
+            <button type="submit">Submit</button>
+      </form>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Your response has been successfully submitted. Our team will contact you soon. If you have any queries, please feel free to contact us.</p>
+        </div>
+      </div>
+</body>
+</html>
+<script>
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var form = document.getElementById("Booknow");
+//     var modal = document.getElementById("myModal");
+//     var span = document.getElementsByClassName("close")[0];
+//     form.addEventListener("submit", function(event) {
+//         event.preventDefault();
+//         modal.style.display = "block";
+//         submitForm();
+//     });
+//     span.onclick = function() {
+//         modal.style.display = "none";
+//     }
+//     window.onclick = function(event) {
+//         if (event.target == modal) {
+//             modal.style.display = "none";
+//         }
+//     }
+//     function submitForm() {
+//       span.onclick = function() {
+//         modal.style.display = "none";
+//     }}
+// });
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var form = document.getElementById("Booknow");
+//     var modal = document.getElementById("myModal");
+//     var span = document.getElementsByClassName("close")[0];
+//     var startDateInput = document.getElementById("startDate");
+//     var endDateInput = document.getElementById("endDate");
+    
+
+//     // Function to extract URL parameter by name
+//     function getUrlParameter(name) {
+//         const urlParams = new URLSearchParams(window.location.search);
+//         const paramValue = urlParams.get(name);
+//         console.log("Parameter", name, ":", paramValue);
+//         return paramValue;
+//     }
+
+//     // Function to populate form fields with package details
+//     function populateFormFields() {
+//         // Get package details from URL parameters
+//         var packageName = getUrlParameter('package');
+//         var days = getUrlParameter('days');
+//         var peopleCount = getUrlParameter('people');
+//         var price = getUrlParameter('price');
+
+//         // Populate form fields with package details
+//         document.getElementById("packageName").style.fontFamily = "'Lexend', sans-serif";
+// document.getElementById("packageName").value = packageName;
+// document.getElementById("days").style.fontFamily = "'Lexend', sans-serif";
+// document.getElementById("days").value = days;
+// document.getElementById("peopleCount").style.fontFamily = "'Lexend', sans-serif";
+// document.getElementById("peopleCount").value = peopleCount;
+// document.getElementById("price").style.fontFamily = "'Lexend', sans-serif";
+// document.getElementById("price").value = price;
+
+//     }
+
+//     // Call populateFormFields function when the page loads
+//     populateFormFields();
+
+//     // Event listener for form submission
+//     form.addEventListener("submit", function(event) {
+//         event.preventDefault();
+//         modal.style.display = "block";
+//         form.reset(); // Reset the form after submission
+//         populateFormFields(); // Populate form fields again after reset
+//     });
+
+//     // Event listener for closing the modal
+//     span.onclick = function() {
+//         modal.style.display = "none";
+//     }
+
+//     // Event listener for clicking outside the modal
+//     window.onclick = function(event) {
+//         if (event.target == modal) {
+//             modal.style.display = "none";
+//         }
+//     }
+// });
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("Booknow");
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+    var startDateInput = document.getElementById("startDate");
+    var endDateInput = document.getElementById("endDate");
+    
+
+    // Function to extract URL parameter by name
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramValue = urlParams.get(name);
+        console.log( name, ":", paramValue);
+        return paramValue;
+    }
+
+    // Function to populate form fields with package details
+    function populateFormFields() {
+        // Get package details from URL parameters
+        var packageName = getUrlParameter('package');
+        var days = getUrlParameter('days');
+        var peopleCount = getUrlParameter('people');
+        var price = getUrlParameter('price');
+
+        // Populate form fields with package details
+        document.getElementById("packageName").style.fontFamily = "'Lexend', sans-serif";
+        document.getElementById("packageName").value = packageName;
+        document.getElementById("days").style.fontFamily = "'Lexend', sans-serif";
+        document.getElementById("days").value = days;
+        document.getElementById("peopleCount").style.fontFamily = "'Lexend', sans-serif";
+        document.getElementById("peopleCount").value = peopleCount;
+        document.getElementById("price").style.fontFamily = "'Lexend', sans-serif";
+        document.getElementById("price").value = price;
+
+    }
+
+    
+    populateFormFields();
+
+//     function setMinStartDate() {
+//       var today = new Date();
+// var dd = today.getDate();
+// if (dd < 10) {
+//     dd = '0' + dd;
+// }
+// var mm = today.getMonth() + 1;
+// if (mm < 10) {
+//     mm = '0' + mm;
+// }
+// var yyyy = today.getFullYear();
+
+// today = yyyy + '-' + mm + '-' + dd;
+// startDateInput.min = today;
+//     }
+
+  
+//     startDateInput.addEventListener("change", function() {
+//         setMinStartDate(); 
+//         var selectedStartDate = new Date(startDateInput.value);
+//         var duration = parseInt(document.getElementById("days").value);
+//         if (!isNaN(duration)) {
+//             var endDate = new Date(selectedStartDate);
+//             endDate.setDate(selectedStartDate.getDate() + duration);
+//             var dd = String(endDate.getDate()).padStart(2, '0');
+//             var mm = String(endDate.getMonth() + 1).padStart(2, '0'); // January is 0!
+//             var yyyy = endDate.getFullYear();
+
+//             endDate = yyyy + '-' + mm + '-' + dd;
+//             endDateInput.value = endDate; 
+//             endDateInput.min = endDate; 
+//         }
+//     });
+
+function setMinStartDate() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    // Padding with leading zeros if needed
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    // Formatting today's date as 'YYYY-MM-DD'
+    var todayFormatted = yyyy + '-' + mm + '-' + dd;
+
+    // Setting the min attribute of the start date input field
+    startDateInput.min = todayFormatted;
+}
+
+// Call setMinStartDate function to set the min date when the page loads
+setMinStartDate();
+
+// Add event listener to the start date input field
+// startDateInput.addEventListener('change', function() {
+//     setMinStartDate(); 
+//     var selectedStartDate = new Date(startDateInput.value);
+//     var duration = parseInt(document.getElementById("days").value);
+  
+
+
+    // if (!isNaN(duration)) {
+    //     var endDate = new Date(selectedStartDate);
+    //     endDate.setDate(selectedStartDate.getDate() + duration);
+    //     var dd = String(endDate.getDate()).padStart(2, '0');
+    //     var mm = String(endDate.getMonth() + 1).padStart(2, '0');
+    //     var yyyy = endDate.getFullYear();
+
+    //     endDate = yyyy + '-' + mm + '-' + dd;
+
+    //     // Check if the end date is before today's date
+    //     var today = new Date();
+    //     if (endDate < today) {
+    //         // If end date is in the past, reset the input value
+    //         endDateInput.value = '';
+    //         // Optionally, provide feedback to the user
+    //         alert('Please select an end date on or after today.');
+    //     } else {
+    //         // Set the end date input value and min attribute
+    //         endDateInput.value = endDate;
+    //         endDateInput.min = endDate;
+    //     }
+    // }
+    
+//     }
+// });
+startDateInput.addEventListener('change', function() {
+    setMinStartDate(); 
+    var selectedStartDate = new Date(startDateInput.value);
+    var duration = parseInt(document.getElementById("days").value);
+
+    if (!isNaN(duration)) {
+        // Calculate the end date based on the selected start date and duration
+        var endDate = new Date(selectedStartDate);
+        endDate.setDate(selectedStartDate.getDate() + duration);
+        // Format the end date as YYYY-MM-DD
+        var dd = String(endDate.getDate()).padStart(2, '0');
+        var mm = String(endDate.getMonth() + 1).padStart(2, '0');
+        var yyyy = endDate.getFullYear();
+        endDate = yyyy + '-' + mm + '-' + dd;
+
+        // Set the end date input value and min attribute
+        endDateInput.value = endDate;
+        endDateInput.min = endDate;
+    } else {
+        // If duration is NaN (not a number), reset end date input value
+        endDateInput.value = '';
+        endDateInput.min = '';
+    }
+});
+
+
+
+    // Event listener for form submission
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        modal.style.display = "block";
+        form.reset(); // Reset the form after submission
+        populateFormFields(); // Populate form fields again after reset
+    });
+
+    // Event listener for closing the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Event listener for clicking outside the modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+
+
+</script>
+
+

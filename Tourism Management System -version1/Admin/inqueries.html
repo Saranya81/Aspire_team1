@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-collapse: collapse;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+            
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;  
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .actions button {
+            padding: 8px 16px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 20px;
+        }
+
+        .actions button.edit {
+            color: #085db7;
+        }
+
+        .actions button.delete {
+           color: #dc3545;
+        }
+
+        .packages {
+            display: none;
+            background-color: #ffffff;
+        }
+
+        .packages.active {
+            display: table-row;
+        }
+
+        .north-heading {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 4%;">Queries List</h1>
+    <div class="dropdown">
+        <div class="dropdown-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        
+                        <th>No of People</th>
+                        
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Accommodation</th>
+                        <th>Travels</th>
+                        <th>Phone</th>
+                        <th>Additional message</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+            
+                        <td>Lotus Temple</td>
+                        <td>Guna</td>
+                        <td>guna06@gmail.com</td>
+                        <td>5</td>
+                        <td>4-6-2024</td>
+                        <td>7-6-2024</td>
+                        <td>Resort</td>
+                        <td>Not required</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 678912345</td>
+                        <td>may i know about the price for 5 days </td>
+                    </tr>
+
+                        <td>oosur</td>
+                        <td>karthick</td>
+                        <td>guna06@gmail.com</td>
+                        <td>2</td>
+                        <td>7-5-2024</td>
+                        <td>9-5-2024</td>
+                        <td>Resort</td>
+                        <td>Not required</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 9845543215</td>
+                        <td>I want to know about payments details</td>
+                    
+                    </tr>
+                    
+                        <td>Kullu</td>
+                        <td>Kalai</td>
+                        <td>guna06@gmail.com</td>
+                        <td>2</td>
+                        <td>5-5-2024</td>
+                        <td>30-4-2024</td>
+                        <td>Not required</td>
+                        <td>Bus</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 987654321</td>
+                        <td>I want to go given package place can you customise this.. </td>
+                    </tr>
+                    
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+   
+ 
+
+
+</body>
+</html>
