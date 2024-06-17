@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        table {
+           
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-collapse: collapse;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+            
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;  
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .actions button {
+            padding: 8px 16px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 20px;
+        }
+
+        .actions button.edit {
+            color: #085db7;
+        }
+
+        .actions button.delete {
+           color: #dc3545;
+        }
+
+        .packages {
+            display: none;
+            background-color: #ffffff;
+        }
+
+        .packages.active {
+            display: table-row;
+        }
+
+        .north-heading {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 4%;">Packages List</h1>
+    <div class="dropdown">
+        <div class="dropdown-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Duration</th>
+                        <th>Guide Name</th>
+                        <th>Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="north-heading">
+                        <td colspan="6" style="text-align: left;">North Packages</td>
+                        <td class="arrow" style="text-align: center;"><i class="ri-arrow-down-s-line"></i></td>
+                    </tr>
+                    <tr class="packages north-packages">
+                        <td>Kashmir</td>
+                        <td>Explore the lush valleys, serene lakes, and majestic mountains.</td>
+                        <td>$99</td>
+                        <td>30 days</td>
+                        <td>John Doe</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +123456789</td>
+                        <td class="actions">
+                            <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="packages north-packages">
+                        <td>Package Name 2</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>$199</td>
+                        <td>60 days</td>
+                        <td>Jane Doe</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                        <td class="actions">
+                            <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="packages north-packages">
+                        <td>Package Name 3</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>$199</td>
+                        <td>60 days</td>
+                        <td>Jane Doe</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                        <td class="actions">
+                           <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="packages north-packages">
+                        <td>Package Name 4</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>$199</td>
+                        <td>60 days</td>
+                        <td>Jane Doe</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                        <td class="actions">
+                           <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="packages north-packages">
+                        <td>Package Name 4</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>$199</td>
+                        <td>60 days</td>
+                        <td>Jane Doe</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                        <td class="actions">
+                           <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="packages north-packages">
+                        <td>Package Name 5</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>$199</td>
+                        <td>60 days</td>
+                        <td>Jane Doe</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                        <td class="actions">
+                           <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                        </td>
+                    </tr>
+               
+               <!-- Additional package rows -->
+                    <tr class="south-heading" style="cursor: pointer">
+                        <td colspan="6" style="text-align: left;">South Packages</td>
+                        <td class="arrow" style="text-align: center;"><i class="ri-arrow-down-s-line"></i></td>
+                        <tr class="packages south-packages">
+                            <td>Package Name 1</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$99</td>
+                            <td>30 days</td>
+                            <td>John Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +123456789</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages south-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages south-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages south-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages south-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages south-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tr>
+                    <!-- EAst packages -->
+                    <tr class="east-heading" style="cursor: pointer">
+                        <td colspan="6" style="text-align: left;">East Packages</td>
+                        <td class="arrow" style="text-align: center;"><i class="ri-arrow-down-s-line"></i></td>
+                        <tr class="packages east-packages">
+                            <td>Package Name 1</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$99</td>
+                            <td>30 days</td>
+                            <td>John Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +123456789</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages east-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages east-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages east-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages east-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages east-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tr>
+
+                    <!-- West packages -->
+
+                    <tr class="west-heading" style="cursor: pointer">
+                        <td colspan="6" style="text-align: left;">West Packages</td>
+                        <td class="arrow" style="text-align: center;"><i class="ri-arrow-down-s-line"></i></td>
+                        <tr class="packages west-packages">
+                            <td>Package Name 1</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$99</td>
+                            <td>30 days</td>
+                            <td>John Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +123456789</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages west-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages west-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages west-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages west-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages west-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tr>
+                    <!-- Central  -->
+                    <tr class="central-heading" style="cursor: pointer">
+                        <td colspan="6" style="text-align: left;">Central Packages</td>
+                        <td class="arrow" style="text-align: center;"><i class="ri-arrow-down-s-line"></i></td>
+                        <tr class="packages central-packages">
+                            <td>Package Name 1</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$99</td>
+                            <td>30 days</td>
+                            <td>John Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +123456789</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages central-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="packages central-packages">
+                            <td>Package Name 2</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>$199</td>
+                            <td>60 days</td>
+                            <td>Jane Doe</td>
+                            <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> +987654321</td>
+                            <td class="actions">
+                               <button class="edit" onclick="editPackage(this)"><i class="ri-edit-2-fill"></i></button>
+                <button class="delete" onclick="deletePackage(this)"><i class="ri-delete-bin-6-fill"></i></button>
+                            </td>
+                        </tr>
+                       
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        // Dropdown effect
+        document.addEventListener("DOMContentLoaded", function() {
+        const northArrow = document.querySelector('.north-heading .arrow i');
+        const northPackages = document.querySelectorAll('.north-packages'); // Updated selector
+
+        const southhArrow = document.querySelector('.south-heading .arrow i');
+        const southPackages = document.querySelectorAll('.south-packages'); 
+
+        const eastArrow = document.querySelector('.east-heading .arrow i');
+        const eastPackages = document.querySelectorAll('.east-packages'); 
+
+        const westArrow = document.querySelector('.west-heading .arrow i');
+        const westPackages = document.querySelectorAll('.west-packages'); 
+
+        const centralArrow = document.querySelector('.central-heading .arrow i');
+        const centralPackages = document.querySelectorAll('.central-packages'); 
+
+        northArrow.addEventListener('click', function() {
+            northPackages.forEach(row => {
+                row.classList.toggle('active');
+            });
+        });
+        southhArrow.addEventListener('click', function() {
+            southPackages.forEach(row => {
+                row.classList.toggle('active');
+            });
+        });
+        eastArrow.addEventListener('click', function() {
+            eastPackages.forEach(row => {
+                row.classList.toggle('active');
+            });
+        });
+        westArrow.addEventListener('click', function() {
+            westPackages.forEach(row => {
+                row.classList.toggle('active');
+            });
+        });
+        centralArrow.addEventListener('click', function() {
+            centralPackages.forEach(row => {
+                row.classList.toggle('active');
+            });
+        });
+    });
+  //delete and edit 
+  
+  function editPackage(button) {
+    // Get the row corresponding to the clicked edit button
+    var row = button.closest('tr');
+
+    // Extract package information from the row
+    var name = row.cells[0].textContent;
+    var description = row.cells[1].textContent;
+    var price = row.cells[2].textContent;
+    var duration = row.cells[3].textContent;
+    var contactName = row.cells[4].textContent;
+    var contactNumber = row.cells[5].textContent;
+
+    // Replace the cell contents with input fields for editing
+    row.cells[0].innerHTML = '<input type="text" value="' + name + '" style="background-color:white; border: 2px solid black; height:50px ;font-family: \'Lexend\', sans-serif;">';
+row.cells[1].innerHTML = '<input type="text" value="' + description + '" style="background-color:white; border: 2px solid black;height:50px;font-family: \'Lexend\', sans-serif;">';
+row.cells[2].innerHTML = '<input type="text" value="' + price + '" style="background-color:white; border: 2px solid black;height:50px;font-family: \'Lexend\', sans-serif;">';
+row.cells[3].innerHTML = '<input type="text" value="' + duration + '" style="background-color:white; border: 2px solid black;height:50px;font-family: \'Lexend\', sans-serif;">';
+row.cells[4].innerHTML = '<input type="text" value="' + contactName + '" style="background-color:white; border: 2px solid black;height:50px;font-family: \'Lexend\', sans-serif;">';
+row.cells[5].innerHTML = '<input type="text" value="' + contactNumber + '" style="background-color:white; border: 2px solid black;height:50px;font-family: \'Lexend\', sans-serif;">';
+
+
+    // Change the button's onclick attribute to saveChanges function
+    button.setAttribute('onclick', 'saveChanges(this)');
+    // Change the button's icon to indicate saving changes
+    button.innerHTML = '<i class="ri-save-fill"></i>';
+}
+
+function saveChanges(button) {
+    // Get the row corresponding to the clicked edit button
+    var row = button.closest('tr');
+
+    // Extract the edited values from input fields
+    var name = row.cells[0].querySelector('input').value;
+    var description = row.cells[1].querySelector('input').value;
+    var price = row.cells[2].querySelector('input').value;
+    var duration = row.cells[3].querySelector('input').value;
+    var contactName = row.cells[4].querySelector('input').value;
+    var contactNumber = row.cells[5].querySelector('input').value;
+
+    // Update the cell contents with the edited values
+    row.cells[0].textContent = name;
+    row.cells[1].textContent = description;
+    row.cells[2].textContent = price;
+    row.cells[3].textContent = duration;
+    row.cells[4].textContent = contactName;
+    row.cells[5].textContent = contactNumber;
+
+    // Restore the edit button's onclick attribute to editPackage function
+    button.setAttribute('onclick', 'editPackage(this)');
+    // Change the button's icon back to edit icon
+    button.innerHTML = '<i class="ri-edit-2-fill"></i>';
+}
+
+
+function deletePackage(button) {
+    var packageRow = button.closest('tr');
+
+    // If the button is in cancel mode, revert to delete mode
+    // if (button.classList.contains('cancel')) {
+    //     button.innerHTML = '<i class="ri-delete-bin-6-fill"></i>';
+    //     button.classList.remove('cancel');
+    //     button.classList.add('delete');
+
+       
+    //     var editButton = packageRow.querySelector('.save');
+    //     editButton.innerHTML = '<i class="ri-edit-2-fill"></i>';
+    //     editButton.classList.remove('save');
+    //     editButton.classList.add('edit');
+    //     return;
+    // }
+
+    // Remove the row from the table
+    packageRow.remove();
+
+    // You can also send an AJAX request to the server to delete the package permanently
+}
+
+    </script>
+</body>
+</html>

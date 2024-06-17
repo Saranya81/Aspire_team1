@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-collapse: collapse;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+            
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;  
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .actions button {
+            padding: 8px 16px;
+            margin-right: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 20px;
+        }
+
+        .actions button.edit {
+            color: #085db7;
+        }
+
+        .actions button.delete {
+           color: #dc3545;
+        }
+
+        .packages {
+            display: none;
+            background-color: #ffffff;
+        }
+
+        .packages.active {
+            display: table-row;
+        }
+
+        .north-heading {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 4%;">Bookings</h1>
+    <div class="dropdown">
+        <div class="dropdown-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Customer Name</th>
+                        <th>No of People</th>
+            
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Accommodation</th>
+                        <th>Travels</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                        <td>Delhi</td>
+                        <td>Guna</td>
+                        <td>3</td>
+                        <td>4-6-2024</td>
+                        <td>7-6-2024</td>
+                        <td>Resort</td>
+                        <td>Not required</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 678912345</td>
+                    </tr>
+
+                        <td>Kodaikanal</td>
+                        <td>karthick</td>
+                        <td>2</td>
+                        <td>7-5-2024</td>
+                        <td>9-5-2024</td>
+                        <td>Resort</td>
+                        <td>Not required</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 9845543215</td>
+                    
+                    </tr>
+                    
+                        <td>Manali</td>
+                        <td>Kalai</td>
+                        <td>2</td>
+                        <td>5-5-2024</td>
+                        <td>30-4-2024</td>
+                        <td>Not required</td>
+                        <td>Bus</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 987654321</td>
+                       
+                    </tr>
+                    
+                        <td>Mumbai</td>
+                        <td>Kavya</td>
+                        <td>4</td>
+                        <td>17-5-2024</td>
+                        <td>21-5-2024</td>
+                        <td>Resort</td>
+                        <td>train</td>
+                        <td><img src="images/telephone.png" style="height: 15px; width: 15px;"> 987654321</td>
+                       
+                    </tr>
+               
+                </tbody>
+            </table>
+        </div>
+    </div>
+   
+ 
+
+
+</body>
+</html>
